@@ -1,10 +1,13 @@
-import { Header } from "./components";
+import { Header, Navigation } from "./components";
 
 
 
 
 export const App = () => {
   return (
-    <Header />
+    <>
+      <Header />
+      <Navigation />
+    </>
   );
 }

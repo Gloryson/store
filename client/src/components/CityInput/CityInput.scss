@@ -1,0 +1,28 @@
+.city__input__container {
+  display: flex;
+  height: 20px;
+
+  &:hover {
+    filter: invert(28%) sepia(96%) saturate(729%) hue-rotate(168deg) brightness(99%) contrast(100%);
+  }
+}
+
+.ico__location {
+  width: 20px;
+  height: 20px;
+  background: url(../../assets/svg/marker.svg) center no-repeat;
+  background-size: 100%;
+}
+
+.city__input {
+  width: 100px;
+  height: 20px;
+  padding: 0 5px;
+  font-size: 15px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+

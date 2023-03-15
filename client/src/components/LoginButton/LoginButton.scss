@@ -1,0 +1,28 @@
+.login__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-width: 105px;
+  height: 37px;
+  border: 1px solid #dddddd;
+  border-radius: 30px;
+  padding: 0 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ffffff;
+  }
+}
+
+.login__ico {
+  width: 15px;
+  height: 15px;
+  background: url(../../assets/svg/user.svg) no-repeat center left;
+  background-size: 100%;
+  cursor: pointer;
+}
+
+.login__text {
+  font-size: 15px;
+}

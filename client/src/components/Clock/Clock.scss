@@ -1,0 +1,18 @@
+.clock__container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: default;
+}
+
+.clock__ico {
+  width: 20px;
+  height: 20px;
+  background: url(../../assets/svg/clock.svg) no-repeat center;
+  background-size: 100%;
+}
+
+.clock__time {
+  min-width: 60px;
+  font-size: 15px;
+}

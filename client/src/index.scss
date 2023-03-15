@@ -4,12 +4,15 @@
   box-sizing: border-box;
   text-decoration: none;
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #444444;
+  font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #444444;
   scrollbar-width: thin;
 
   &::-webkit-scrollbar {
@@ -22,7 +25,11 @@
     border: 3px solid #ffffff;
 
     &:hover {
-      background-color: #aaaaaa;
+      background-color: #AAAAAA;
     }
   }
 }
+
+$base-brand-color: #0969A2;
+$light-brand-color: #3D9AD1;
+$dark-brand-color: #034369;
