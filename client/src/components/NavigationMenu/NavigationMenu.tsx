@@ -1,8 +1,8 @@
-import './Navigation.scss';
+import './NavigationMenu.scss';
 
 
 
-export const Navigation = () => {
+export const NavigationMenu = () => {
   return(
     <nav>
       <div className='category'>Fitness</div>

@@ -1,0 +1,100 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  background-color: #eeeeee;
+  overflow-x: hidden;
+  padding: 60px 150px 40px;
+}
+
+.company__info {
+  display: flex;
+  width: 100%;
+
+  @media (hover:none), (max-width: 899.9px) {
+    display: none;
+  }
+}
+
+.info__block {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  padding-left: 20px;
+
+  h2 {
+    font-size: 20px;
+    padding: 20px 0 20px 0;
+  }
+
+  a {
+    padding: 3px 0;
+    
+    &:hover {
+      color: #0969A2;
+    }
+  }
+}
+
+.partners {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 400%;
+  height: 175px;
+  animation: partner-logos-move 360s linear infinite;
+
+  @keyframes partner-logos-move {
+    0% {transform: translateX(28%)}
+    50% {transform: translateX(-28%)}
+    100% {transform: translateX(28%)}
+  }
+
+  @media (hover:none), (max-width: 899.9px) {
+    display: none;
+  }
+
+  .partner__logo {
+    width: 120px;
+    height: 100px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    box-shadow: #999999 2px 2px 5px 0px;
+  }
+}
+
+.footer__info {
+  width: 70%;
+  color: #999999;
+  text-align: center;
+  font-size: 10px;
+}
+
+.payments__icon {
+  width: 175px;
+  height: 50px;
+  background: url(../../assets/payments-logo.png) no-repeat center;
+  background-size: 100%;
+  opacity: 0.5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.amazon__logo {background-image: url(../../assets/partner-logos/amazon.jpg)} .apple__logo {background-image: url(../../assets/partner-logos/apple.jpg)} .att__logo {background-image: url(../../assets/partner-logos/att.jpg)} .bbc__logo {background-image: url(../../assets/partner-logos/bbc.jpg)} .bk__logo {background-image: url(../../assets/partner-logos/bk.jpg)} .bmw__logo {background-image: url(../../assets/partner-logos/bmw.jpg)} .cola__logo {background-image: url(../../assets/partner-logos/cola.jpg)} .doritos__logo {background-image: url(../../assets/partner-logos/doritos.jpg)} .dunkundonats__logo {background-image: url(../../assets/partner-logos/dunkundonats.jpg)} .ford__logo {background-image: url(../../assets/partner-logos/ford.jpg)} .gap__logo {background-image: url(../../assets/partner-logos/gap.jpg)} .google__logo {background-image: url(../../assets/partner-logos/google.jpg)} .ibm__logo {background-image: url(../../assets/partner-logos/ibm.jpg)} .ikea__logo {background-image: url(../../assets/partner-logos/ikea.jpg)} .lego__logo {background-image: url(../../assets/partner-logos/lego.jpg)} .macd__logo {background-image: url(../../assets/partner-logos/macd.jpg)} .microsoft__logo {background-image: url(../../assets/partner-logos/microsoft.jpg)} .nasa__logo {background-image: url(../../assets/partner-logos/nasa.jpg)} .nfl__logo {background-image: url(../../assets/partner-logos/nfl.jpg)} .nike__logo {background-image: url(../../assets/partner-logos/nike.jpg)} .pepsi__logo {background-image: url(../../assets/partner-logos/pepsi.jpg)} .rainbow__logo {background-image: url(../../assets/partner-logos/rainbow.jpg)} .shell__logo {background-image: url(../../assets/partner-logos/shell.jpg)} .shevrole__logo {background-image: url(../../assets/partner-logos/shevrole.jpg)} .starbucks__logo {background-image: url(../../assets/partner-logos/starbucks.jpg)} .subway__logo {background-image: url(../../assets/partner-logos/subway.jpg)} .ups__logo {background-image: url(../../assets/partner-logos/ups.jpg)} .walmart__logo {background-image: url(../../assets/partner-logos/walmart.jpg)} .wd__logo {background-image: url(../../assets/partner-logos/wd.jpg)}
