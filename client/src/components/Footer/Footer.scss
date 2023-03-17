@@ -7,7 +7,11 @@ footer {
   width: 100%;
   background-color: #eeeeee;
   overflow-x: hidden;
-  padding: 60px 150px 40px;
+  padding: 60px calc((100vw - 1200px) / 2) 40px;
+
+  @media (max-width: 1230px) {
+    padding: 60px 15px 40px;
+  }
 }
 
 .company__info {
@@ -44,14 +48,14 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  width: 400%;
+  width: calc(29 * 140);
   height: 175px;
   animation: partner-logos-move 360s linear infinite;
 
   @keyframes partner-logos-move {
-    0% {transform: translateX(28%)}
-    50% {transform: translateX(-28%)}
-    100% {transform: translateX(28%)}
+    0% {transform: translateX(35%)}
+    50% {transform: translateX(-35%)}
+    100% {transform: translateX(35%)}
   }
 
   @media (hover:none), (max-width: 899.9px) {
@@ -61,7 +65,7 @@ footer {
   .partner__logo {
     width: 120px;
     height: 100px;
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 5px;

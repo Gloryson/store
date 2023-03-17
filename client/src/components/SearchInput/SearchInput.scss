@@ -7,6 +7,14 @@
   border-radius: 30px;
   padding: 0 10px;
   background-color: #ffffff;
+
+  @media (hover:none), (max-width: 899.9px) {
+    position: absolute;
+    top: 45px;
+    width: calc(100% - 50px);
+    height: 30px;
+    border: none;
+  }
 }
 
 .search__ico {
@@ -16,10 +24,19 @@
   background-size: 100%;
   opacity: 0.5;
   cursor: pointer;
+
+  @media (hover:none), (max-width: 899.9px) {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 .search__input {
   width: 33vw;
   height: 20px;
   font-size: 15px;
+
+  @media (hover:none), (max-width: 899.9px) {
+    width: 100%;
+  }
 }

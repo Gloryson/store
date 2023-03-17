@@ -1,4 +1,4 @@
-.cart__container {
+.cart__button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +13,18 @@
   &:hover {
     background-color: #ffffff;
   }
+
+  @media (hover:none), (max-width: 899.9px) {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    border: none;
+    padding: 0;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
 }
 
 .cart__ico {
@@ -22,10 +34,20 @@
   background-size: 100%;
   cursor: pointer;
   position: relative;
+
+  @media (hover:none), (max-width: 899.9px) {
+    width: 100%;
+    height: 100%;
+    background-image: url(../../assets/svg/shopping-cart-m.svg);
+  }
 }
 
 .cart__text {
   font-size: 15px;
+
+  @media (hover:none), (max-width: 899.9px) {
+    display: none;
+  }
 }
 
 .cart__not__empty {

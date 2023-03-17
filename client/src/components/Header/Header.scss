@@ -1,8 +1,17 @@
 header {
   display: flex;
   flex-direction: column;
+  width: 100%;
   height: 120px;
   background-color: #f7f8fa;
+
+  @media (hover:none), (max-width: 899.9px) {
+    height: 90px;
+    background: linear-gradient(90deg, #0969A2, #3D9AD1);
+    position: fixed;
+    top: 0;
+    z-index: 98;
+  }
 }
 
 .first__row__container, .second__row__container {
@@ -10,15 +19,45 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 40px;
-  padding: 0 150px;
+  padding: 0 calc((100vw - 1200px) / 2);
+
+  @media (max-width: 1230px) {
+    padding: 0 25px;
+  }
+}
+
+.first__row__container {
+  @media (hover:none), (max-width: 899.9px) {
+    display: none;
+  }
 }
 
 .second__row__container {
   height: 80px;
   border-top: 1px solid #dddddd;
+
+  @media (hover:none), (max-width: 899.9px) {
+    align-items: start;
+    padding: 10px 25px;
+  }
+}
+
+.burger {
+  display: none;
+
+  @media (hover:none), (max-width: 899.9px) {
+    display: flex;
+    width: 60px;
+    height: 20px;
+    background: url(../../assets/svg/menu-burger.svg) no-repeat left;
+    background-size: contain;
+    cursor: pointer;
+  }
 }
 
 .brand__logo {
+  display: flex;
+  align-items: center;
   font-size: 30px;
   font-weight: 900;
   background: linear-gradient(90deg, #034369, #0969A2, #3D9AD1);
@@ -26,6 +65,13 @@ header {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
+
+  @media (hover:none), (max-width: 899.9px) {
+    height: 20px;
+    background: transparent;
+    -webkit-text-fill-color: #ffffff;
+    font-size: 25px;
+  }
 }
 
 .login__cart__container {
@@ -34,4 +80,11 @@ header {
   align-items: center;
   gap: 7px;
   min-width: 220px;
+
+  @media (hover:none), (max-width: 899.9px) {
+    justify-content: center;
+    gap: 20px;
+    width: 60px;
+    min-width: 60px;
+  }
 }
