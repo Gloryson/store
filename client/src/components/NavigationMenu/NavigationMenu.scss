@@ -17,14 +17,15 @@ nav {
   @media (hover:none), (max-width: 899.9px) {
     flex-direction: column;
     position: fixed;
+    max-width: 250px;
     height: 100vh;
     gap: 5px;
     transform: translateX(-100%);
-    transition-duration: 0.35s;
+    transition-duration: 0.2s;
   }
 }
 
-.appearance {
+.show__nav {
   transform: translateX(0);
 }
 
@@ -44,9 +45,25 @@ nav {
 
   @media (hover:none), (max-width: 899.9px) {
     width: 200px;
-    height: 50px;
+    height: 40px;
     font-size: 20px;
     border: 1px solid #ffffff;
     border-radius: 5px;
+  }
+}
+
+.close__burger {
+  display: none;
+
+  @media (hover:none), (max-width: 899.9px) {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    background: url(../../assets/svg/cross.svg) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
   }
 }

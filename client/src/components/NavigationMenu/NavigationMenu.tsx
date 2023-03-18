@@ -1,26 +1,31 @@
-import { Dispatch, SetStateAction } from 'react';
+import uuid from 'react-uuid';
+import { setIsNav } from '../../store/burgerSlice';
+import { useAppDispatch, useAppSelector } from '../../store';
 import './NavigationMenu.scss';
 
 
 
-interface NavigationMenuProps {
-  isNav: boolean;
-  setIsNav: Dispatch<SetStateAction<boolean>>;
-}
+
+export const NavigationMenu: React.FC = () => {
+
+  const categories = ['Fitness', 'Electronics', 'Cars', 'Fishing', 'Books', 'Realty', 'Services', 'Food'];
+  const isNav = useAppSelector(state => state.burger.isNav);
+  const dispatch = useAppDispatch();
+
+
+  
+  const closeBurger = () => dispatch(setIsNav(false));
 
 
 
-export const NavigationMenu: React.FC<NavigationMenuProps> = ({ isNav, setIsNav }) => {
   return(
-    <nav className={isNav ? 'appearance' : ''}>
-      <div className='category' onClick={() => setIsNav(() => false)}>Fitness</div>
-      <div className='category' onClick={() => setIsNav(() => false)}>Electronics</div>
-      <div className='category' onClick={() => setIsNav(() => false)}>Cars</div>
-      <div className='category' onClick={() => setIsNav(() => false)}>Fishing</div>
-      <div className='category' onClick={() => setIsNav(() => false)}>Books</div>
-      <div className='category' onClick={() => setIsNav(() => false)}>Realty</div>
-      <div className='category' onClick={() => setIsNav(() => false)}>Services</div>
-      <div className='category' onClick={() => setIsNav(() => false)}>Food</div>
+    <nav className={isNav ? 'show__nav' : ''}>
+      {
+        categories.map(category => {
+          return <div className='category'onClick={closeBurger} key={uuid()}>{category}</div>
+        })
+      }
+      <button className='close__burger' onClick={closeBurger}></button>
     </nav>
   )
 }

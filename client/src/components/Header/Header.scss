@@ -52,6 +52,7 @@ header {
     background: url(../../assets/svg/menu-burger.svg) no-repeat left;
     background-size: contain;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 

@@ -5,6 +5,9 @@ import { AppLayout, Authorization, Cart, Main } from "./Pages";
 
 
 export const App = () => {
+
+  
+
   return (
     <Routes>
       <Route path='/' element={ <AppLayout /> }>
