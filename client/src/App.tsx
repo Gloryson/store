@@ -1,12 +1,13 @@
 import { Route, Routes } from "react-router-dom";
+import { usePopularGoods } from "./helpers";
 import { AppLayout, Authorization, Cart, Main } from "./Pages";
 
 
 
 
 export const App = () => {
-
   
+  usePopularGoods();
 
   return (
     <Routes>

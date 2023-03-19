@@ -1,6 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import burgerReducer from './burgerSlice';
+import cartSlice from "./cartSlice";
+import popularSlice from "./popularSlice";
 
 
 
@@ -9,6 +11,8 @@ import burgerReducer from './burgerSlice';
 const store = configureStore({
   reducer: {
     burger: burgerReducer,
+    popular: popularSlice,
+    cart: cartSlice,
   }
 })
 
