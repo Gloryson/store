@@ -1,6 +1,7 @@
 import uuid from 'react-uuid';
 import { setIsNav } from '../../store/burgerSlice';
 import { useAppDispatch, useAppSelector } from '../../store';
+import { Link } from 'react-router-dom';
 import './NavigationMenu.scss';
 
 
@@ -22,7 +23,7 @@ export const NavigationMenu: React.FC = () => {
     <nav className={isNav ? 'show__nav' : ''}>
       {
         categories.map(category => {
-          return <div className='category'onClick={closeBurger} key={uuid()}>{category}</div>
+          return <Link to={`/${category.toLowerCase()}`} className='category' onClick={closeBurger} key={uuid()}>{category}</Link>
         })
       }
       <button className='close__burger' onClick={closeBurger}></button>

@@ -1,6 +1,7 @@
 import { CardButton } from "./CardButton/CardButton";
 import { MobileCard } from "./MobileCard/MobileCard";
+import { PurchaseCard } from "./PurchaseCard/PurchaseCard";
 
 
 
-export { MobileCard, CardButton };
+export { MobileCard, CardButton, PurchaseCard };

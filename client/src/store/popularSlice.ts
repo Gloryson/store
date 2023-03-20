@@ -2,9 +2,9 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface Good {
   code: number;
-  name: string;
+  title: string;
   stars: number;
-  price: string;
+  price: number;
 };
 
 interface Popular {

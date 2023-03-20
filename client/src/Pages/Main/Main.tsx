@@ -1,6 +1,6 @@
 import uuid from 'react-uuid';
 import { Slider } from '../../components';
-import { MobileCard } from '../../components/Cards';
+import { MobileCard } from '../../components';
 import { useAppSelector } from '../../store';
 import './Main.scss';
 
@@ -20,7 +20,7 @@ export const Main = () => {
             return <MobileCard 
               key={uuid()} 
               code={good.code} 
-              title={good.name} 
+              title={good.title} 
               stars={good.stars} 
               price={good.price} 
             />
