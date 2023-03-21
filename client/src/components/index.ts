@@ -1,4 +1,4 @@
-import { CardButton, MobileCard, PurchaseCard } from './Cards';
+import { Card, CardButton, MobileCard, PurchaseCard } from './Cards';
 import { CartButton } from './CartButton/CartButton';
 import { CityInput } from './CityInput/CityInput';
 import { Clock } from './Clock/Clock';
@@ -13,4 +13,4 @@ import { Slider } from './Slider/Slider';
 
 
 
-export { Header, CityInput, PhoneAndMail, Clock, SearchInput, LoginButton, CartButton, NavigationMenu, Footer, Slider, MobileCard, CardButton, PurchaseCard };
+export { Header, CityInput, PhoneAndMail, Clock, SearchInput, LoginButton, CartButton, NavigationMenu, Footer, Slider, MobileCard, CardButton, PurchaseCard, Card };

@@ -26,10 +26,13 @@ const connect = async () => {
     });
 		
 		app.get('/db/:cat', (req, res) => {
-      if (req.params.cat === 'popular') {
-        res.send([53, 70, 75, 1, 12, 5, 32, 29, 15, 36, 9, 39].map(code => goods[code - 1]));
-      }
-      res.send(goods.filter(good => req.params.cat === good.category));
+      setTimeout(() => {
+        if (req.params.cat === 'popular') {
+          res.send([53, 70, 75, 1, 12, 5, 32, 29, 15, 36, 9, 39].map(code => goods[code - 1]));
+          return;
+        }
+        res.send(goods.filter(good => req.params.cat === good.category));
+      }, 1000)
     });
 		
 	} catch (error) {

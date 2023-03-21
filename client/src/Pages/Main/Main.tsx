@@ -15,17 +15,18 @@ export const Main = () => {
       <Slider />
       <div className='popular'>
         <div className='popular__goods'>
-
-          {popularGoods.map(good => {
-            return <MobileCard 
-              key={uuid()} 
-              code={good.code} 
-              title={good.title} 
-              stars={good.stars} 
-              price={good.price} 
-            />
-          })}
-
+          {
+            popularGoods[0] ?
+              popularGoods.map(good => {
+                return <MobileCard 
+                  key={uuid()} 
+                  code={good.code} 
+                  title={good.title} 
+                  stars={good.stars} 
+                  price={good.price} 
+                />
+              }) : <div className='spiner'></div>
+          }
         </div>
       </div>
     </main>

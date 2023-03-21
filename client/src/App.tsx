@@ -10,8 +10,6 @@ export const App = () => {
   
   usePopularGoods();
 
-  const categories = ['fitness', 'electronics', 'cars', 'fishing', 'books', 'realty', 'services', 'food'];
-
   return (
     <Routes>
       <Route path='/' element={ <AppLayout /> }>
@@ -19,7 +17,16 @@ export const App = () => {
         <Route path='/authorization' element={ <Authorization />} />
         <Route path='/cart' element={ <Cart />} />
         {
-          categories.map(category => {
+          [
+            'fitness',
+            'electronics',
+            'cars',
+            'fishing',
+            'books',
+            'realty',
+            'services',
+            'food'
+          ].map(category => {
             return <Route
               path={`/${category}`}
               element={ <StoreSection category={category} />}
