@@ -12,7 +12,7 @@ interface Cart {
 }
 
 const initialState: Cart = {
-  list: []
+  list: JSON.parse(localStorage.getItem('storeCartList') || '[]')
 }
 
 const cartSlice = createSlice({
@@ -21,17 +21,21 @@ const cartSlice = createSlice({
   reducers: {
     addToCart(state, action: PayloadAction<Purchase>) {
       state.list.push(action.payload);
+      localStorage.setItem('storeCartList', JSON.stringify(state.list));
     },
     removeFromCart(state, action: PayloadAction<number>) {
       state.list = state.list.filter(purchase => purchase.code != action.payload);
+      localStorage.setItem('storeCartList', JSON.stringify(state.list));
     },
     increase(state, action: PayloadAction<number>) {
       const inc = state.list.find(purchase => purchase.code === action.payload);
       if (inc && inc.amount < 20) inc.amount += 1;
+      localStorage.setItem('storeCartList', JSON.stringify(state.list));
     },
     decrease(state, action: PayloadAction<number>) {
       const dec = state.list.find(purchase => purchase.code === action.payload);
       if (dec && dec.amount > 1) dec.amount -= 1;
+      localStorage.setItem('storeCartList', JSON.stringify(state.list));
     }
   }
 })

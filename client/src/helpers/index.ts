@@ -1,6 +1,6 @@
 import { getStringWithTime } from './getStringWithTime';
-import { usePopularGoods } from './hooks/usePopularGoods';
+import { useGetPopularGoods } from './useGetPopularGoods';
 
 
 
-export { getStringWithTime, usePopularGoods };
+export { getStringWithTime, useGetPopularGoods };

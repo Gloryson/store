@@ -44,6 +44,7 @@ export const StoreSection: React.FC<{category: string}> = ({ category }) => {
             />
           }) : <div className='spiner'></div>
       }
+      <div className='filters'></div>
     </section>
   )
 }

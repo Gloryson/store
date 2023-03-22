@@ -1,17 +1,17 @@
+@import '../../../scss/variables';
+
 .card__button {
+  @include flex-center;
   width: 120px;
   height: 35px;
   border-radius: 5px;
-  background-color: #0969A2;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: $base-brand-color;
+  color: white;
   font-size: 14px;
   cursor: pointer;
 
   &:hover {
-    background-color: #034369;
+    background-color: $dark-brand-color;
   }
 
   &:active {
@@ -20,9 +20,9 @@
 }
 
 .in__cart {
-  border: 2px solid #0969A2;
-  background-color: #ffffff;
-  color: #0969A2;
+  border: 2px solid $base-brand-color;
+  background-color: white;
+  color: $base-brand-color;
   font-size: 15px;
 
   &:hover {

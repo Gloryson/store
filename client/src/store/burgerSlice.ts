@@ -2,8 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 
 
-const initialState: { isNav: boolean } = {
-  isNav: false
+const initialState: { isOpenBurger: boolean } = {
+  isOpenBurger: false
 }
 
 
@@ -12,13 +12,13 @@ const burgerSlice = createSlice({
   name: 'burger',
   initialState,
   reducers: {
-    setIsNav(state, action: PayloadAction<boolean>) {
-      state.isNav = action.payload;
+    setIsOpenBurger(state, action: PayloadAction<boolean>) {
+      state.isOpenBurger = action.payload;
     }
   }
 })
 
 
 
-export const { setIsNav } = burgerSlice.actions;
+export const { setIsOpenBurger } = burgerSlice.actions;
 export default burgerSlice.reducer;

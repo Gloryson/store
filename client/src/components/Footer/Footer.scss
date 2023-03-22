@@ -1,8 +1,8 @@
+@import '../../scss/variables';
+
 footer {
-  display: flex;
+  @include flex-center;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 20px;
   width: 100%;
   background-color: #eeeeee;
@@ -38,15 +38,13 @@ footer {
     padding: 3px 0;
     
     &:hover {
-      color: #0969A2;
+      color: $base-brand-color;
     }
   }
 }
 
 .partners {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   gap: 20px;
   width: calc(29 * 140);
   height: 175px;
@@ -83,7 +81,7 @@ footer {
 .payments__icon {
   width: 175px;
   height: 50px;
-  background: url(../../assets/payments-logo.png) no-repeat center;
+  background: url(../../assets/png/payments-logo.png) no-repeat center;
   background-size: 100%;
   opacity: 0.5;
 }

@@ -1,3 +1,5 @@
+@import '../../../scss/variables';
+
 .purchase {
   display: flex;
   width: 100%;
@@ -7,9 +9,7 @@
 }
 
 .purchase__image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
   width: 20%;
   min-height: 150px;
 
@@ -43,7 +43,7 @@
 }
 
 .purchase__title {
-  color: #034369;
+  color: $dark-brand-color;
   font-size: 15px;
   cursor: pointer;
 
@@ -53,18 +53,14 @@
 }
 
 .purchase__amount {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
 
   @media (min-width: 700.1px) {
     width: 25%;
   }
 
   .decrease, .increase, .amount {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     font-size: 20px;
     user-select: none;
   }
@@ -101,9 +97,7 @@
 }
 
 .purchase__remove {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   width: 20px;
   height: 20px;
   position: absolute;
@@ -112,7 +106,7 @@
   font-size: 20px;
   background-color: #eeeeee;
   border-radius: 50%;
-  color: #0969A2;
+  color: $base-brand-color;
   cursor: pointer;
 
   &:hover {

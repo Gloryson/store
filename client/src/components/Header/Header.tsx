@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { CartButton, CityInput, Clock, LoginButton, PhoneAndMail, SearchInput } from '../';
-import { setIsNav } from '../../store/burgerSlice';
+import { CartButton, CityInput, Clock, SearchInput } from '../';
+import { setIsOpenBurger } from '../../store/burgerSlice';
 import { useAppDispatch } from '../../store';
 import './Header.scss';
 
@@ -10,13 +10,22 @@ import './Header.scss';
 export const Header: React.FC = () => {
 
   const dispatch = useAppDispatch();
-  const openBurger = () => dispatch(setIsNav(true));
+  const openBurger = () => dispatch(setIsOpenBurger(true));
 
   return(
     <header>
       <div className='first__row__container'>
         <CityInput />
-        <PhoneAndMail />
+        <div className='phone__mail__container'>
+          <a href="tel:+77777777777" className='contacts__link'>
+            <div className='phone__ico'></div>
+            <div className='phone__text'>+77 777 777 777</div>
+          </a>
+          <a href="mailto:best.brand@brand.com" className='contacts__link'>
+            <div className='mail__ico'></div>
+            <div className='mail__text'>best.brand@brand.com</div>
+          </a>
+        </div>
         <Clock />
       </div>
       <div className='second__row__container'>
@@ -24,7 +33,10 @@ export const Header: React.FC = () => {
         <Link to={'/'}><div className='brand__logo'>BRAND</div></Link>
         <SearchInput />
         <div className='login__cart__container'>
-          <LoginButton />
+          <Link to={'/authorization'} className='login__button'>
+            <div className='login__ico'></div>
+            <div className='login__text'>Login</div>
+          </Link>
           <CartButton />
         </div>
       </div>

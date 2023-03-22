@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import uuid from "react-uuid";
-import { usePopularGoods } from "./helpers";
-import { AppLayout, Authorization, Cart, Main, StoreSection } from "./Pages";
+import { useGetPopularGoods } from "./helpers";
+import { AppLayout, Authorization, Cart, Main, StoreSection } from "./pages";
 
 
 
 
 export const App = () => {
   
-  usePopularGoods();
+  useGetPopularGoods();
 
   return (
     <Routes>

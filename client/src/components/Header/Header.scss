@@ -1,3 +1,5 @@
+@import '../../scss/variables';
+
 header {
   display: flex;
   flex-direction: column;
@@ -7,12 +9,14 @@ header {
 
   @media (hover:none), (max-width: 899.9px) {
     height: 90px;
-    background: linear-gradient(90deg, #0969A2, #3D9AD1);
+    background: linear-gradient(90deg, $base-brand-color, $light-brand-color);
     position: fixed;
     top: 0;
     z-index: 98;
   }
 }
+
+
 
 .first__row__container, .second__row__container {
   display: flex;
@@ -42,6 +46,47 @@ header {
   }
 }
 
+
+
+.phone__mail__container {
+  display: flex;
+  padding: 0 15px;
+  gap: 50px;
+  border-right: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+}
+
+.contacts__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &:hover {
+    filter: invert(28%) sepia(96%) saturate(729%) hue-rotate(168deg) brightness(99%) contrast(100%);
+  }
+}
+
+.phone__ico, .mail__ico {
+  width: 20px;
+  height: 20px;
+}
+
+.phone__ico {
+  background: url(../../assets/svg/phone-call.svg) no-repeat center;
+  background-size: 100%;
+}
+
+.mail__ico {
+  background: url(../../assets/svg/envelope.svg) no-repeat center;
+  background-size: 100%;
+}
+
+.phone__text, .mail__text {
+  font-size: 15px;
+}
+
+
+
 .burger {
   display: none;
 
@@ -56,12 +101,14 @@ header {
   }
 }
 
+
+
 .brand__logo {
   display: flex;
   align-items: center;
   font-size: 30px;
   font-weight: 900;
-  background: linear-gradient(90deg, #034369, #0969A2, #3D9AD1);
+  background: linear-gradient(90deg, $dark-brand-color, $base-brand-color, $light-brand-color);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -70,10 +117,12 @@ header {
   @media (hover:none), (max-width: 899.9px) {
     height: 20px;
     background: transparent;
-    -webkit-text-fill-color: #ffffff;
+    -webkit-text-fill-color: white;
     font-size: 25px;
   }
 }
+
+
 
 .login__cart__container {
   display: flex;
@@ -87,5 +136,54 @@ header {
     gap: 20px;
     width: 60px;
     min-width: 60px;
+  }
+}
+
+.login__button {
+  @include flex-center;
+  gap: 10px;
+  min-width: 105px;
+  height: 37px;
+  border: 1px solid #dddddd;
+  border-radius: 30px;
+  padding: 0 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+  }
+
+  @media (hover:none), (max-width: 899.9px) {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    border: none;
+    padding: 0;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.login__ico {
+  width: 15px;
+  height: 15px;
+  background: url(../../assets/svg/user.svg) no-repeat center left;
+  background-size: 100%;
+  cursor: pointer;
+
+  @media (hover:none), (max-width: 899.9px) {
+    width: 100%;
+    height: 100%;
+    background-image: url(../../assets/svg/user-m.svg);
+  }
+}
+
+.login__text {
+  font-size: 15px;
+
+  @media (hover:none), (max-width: 899.9px) {
+    display: none;
   }
 }

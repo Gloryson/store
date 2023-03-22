@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import { useAppDispatch } from "../../store";
-import { setPopular } from "../../store/popularSlice";
+import { useAppDispatch } from "../store";
+import { setPopular } from "../store/popularSlice";
 
 
 
 
-export const usePopularGoods = () => {
+export const useGetPopularGoods = () => {
 
   const dispatch = useAppDispatch();
   

@@ -1,3 +1,5 @@
+@import './variables';
+
 * {
   margin: 0;
   padding: 0;
@@ -21,18 +23,13 @@
   &::-webkit-scrollbar-thumb {
     background-color: #cccccc;
     border-radius: 15px;
-    border: 3px solid #ffffff;
+    border: 3px solid white;
 
     &:hover {
       background-color: #AAAAAA;
     }
   }
 }
-
-$base-brand-color: #0969A2;
-$light-brand-color: #3D9AD1;
-$dark-brand-color: #034369;
-
 
 .spiner {
   display: flex;
@@ -49,8 +46,8 @@ $dark-brand-color: #034369;
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 7px solid #3D9AD1;
-    border-color: #3D9AD1 transparent #3D9AD1 transparent;
+    border: 7px solid $light-brand-color;
+    border-color: $light-brand-color transparent $light-brand-color transparent;
     animation: spiner 1s linear infinite;
   
     @keyframes spiner {
