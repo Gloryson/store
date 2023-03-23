@@ -16,9 +16,6 @@ export const Clock = () => {
   }, [time])
 
   return(
-    <div className='clock__container'>
-      <div className='clock__ico'></div>
-      <div className='clock__time'>{time}</div>
-    </div>
+    <div className='clock__time'>{time}</div>
   )
 }

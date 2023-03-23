@@ -1,10 +1,8 @@
 @import '../../scss/variables';
 
 header {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 120px;
+  @include flex(column, 0, 0, 0);
+  @include square(100%, 120px);
   background-color: #f7f8fa;
 
   @media (hover:none), (max-width: 899.9px) {
@@ -19,9 +17,7 @@ header {
 
 
 .first__row__container, .second__row__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(0, space-between, center, 0);
   height: 40px;
   padding: 0 calc((100vw - 1200px) / 2);
 
@@ -49,40 +45,38 @@ header {
 
 
 .phone__mail__container {
-  display: flex;
+  @include flex(0, 0, 0, 50px);
   padding: 0 15px;
-  gap: 50px;
   border-right: 1px solid #dddddd;
   border-left: 1px solid #dddddd;
 }
 
-.contacts__link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.contacts__link__phone, .contacts__link__mail {
+  @include flex(0, 0, center, 10px);
+  font-size: 15px;
+
+  &::before {
+    content: '';
+    @include square(20px, 20px);
+  }
 
   &:hover {
     filter: invert(28%) sepia(96%) saturate(729%) hue-rotate(168deg) brightness(99%) contrast(100%);
   }
 }
 
-.phone__ico, .mail__ico {
-  width: 20px;
-  height: 20px;
+.contacts__link__phone {
+  &::before {
+    background: url(../../assets/svg/phone-call.svg) no-repeat center;
+    background-size: 100%;
+  }
 }
 
-.phone__ico {
-  background: url(../../assets/svg/phone-call.svg) no-repeat center;
-  background-size: 100%;
-}
-
-.mail__ico {
-  background: url(../../assets/svg/envelope.svg) no-repeat center;
-  background-size: 100%;
-}
-
-.phone__text, .mail__text {
-  font-size: 15px;
+.contacts__link__mail {
+  &::before {
+    background: url(../../assets/svg/envelope.svg) no-repeat center;
+    background-size: 100%;
+  }
 }
 
 
@@ -92,8 +86,7 @@ header {
 
   @media (hover:none), (max-width: 899.9px) {
     display: flex;
-    width: 60px;
-    height: 20px;
+    @include square(60px, 20px);
     background: url(../../assets/svg/menu-burger.svg) no-repeat left;
     background-size: contain;
     cursor: pointer;
@@ -104,8 +97,7 @@ header {
 
 
 .brand__logo {
-  display: flex;
-  align-items: center;
+  @include flex(0, 0, center, 0);
   font-size: 30px;
   font-weight: 900;
   background: linear-gradient(90deg, $dark-brand-color, $base-brand-color, $light-brand-color);
@@ -125,10 +117,7 @@ header {
 
 
 .login__cart__container {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  gap: 7px;
+  @include flex(0, end, center, 7px);
   min-width: 220px;
 
   @media (hover:none), (max-width: 899.9px) {
@@ -140,8 +129,7 @@ header {
 }
 
 .login__button {
-  @include flex-center;
-  gap: 10px;
+  @include flex(0, center, center, 10px);
   min-width: 105px;
   height: 37px;
   border: 1px solid #dddddd;
@@ -154,9 +142,8 @@ header {
   }
 
   @media (hover:none), (max-width: 899.9px) {
-    width: 20px;
+    @include square(20px, 20px);
     min-width: 20px;
-    height: 20px;
     border: none;
     padding: 0;
 
@@ -167,15 +154,13 @@ header {
 }
 
 .login__ico {
-  width: 15px;
-  height: 15px;
+  @include square(15px, 15px);
   background: url(../../assets/svg/user.svg) no-repeat center left;
   background-size: 100%;
   cursor: pointer;
 
   @media (hover:none), (max-width: 899.9px) {
-    width: 100%;
-    height: 100%;
+    @include square(100%, 100%);
     background-image: url(../../assets/svg/user-m.svg);
   }
 }

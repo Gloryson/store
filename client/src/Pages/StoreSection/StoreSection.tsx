@@ -1,30 +1,33 @@
 import { useEffect, useState } from 'react';
 import uuid from 'react-uuid';
 import { MobileCard, Card } from '../../components';
+import { getSubcategories } from '../../helpers';
 import './StoreSection.scss';
 
 
 
 export const StoreSection: React.FC<{category: string}> = ({ category }) => {
 
-  const [goods, setGoods] = useState([]);
+  const [state, setState] = useState({data: [], goods: [], filters: [''], currFilter: '', toggle: false});
 
   useEffect(() => {
-    setGoods([]);
+    setState(state => ({...state, data: []}));
     fetch(`http://${window.location.hostname}:3001/db/${category}`)
       .then(response => response.json())
       .then(data => {
-        setGoods(data);
+        setState(state => ({...state, data: data, goods: data, filters: getSubcategories(data)}));
       })
       .catch((error) => console.log(error));
     window.scrollTo(0, 0);
   }, [category])
+
+  
   
   return(
     <section className='store__section'>
       { 
-        goods[0] ?
-          goods.map((good: any) => {
+        state.data[0] ?
+          state.goods.map((good: any) => {
             if (matchMedia('(hover:none)').matches || window.innerWidth < 900) {
               return <MobileCard 
                 key={uuid()}
@@ -44,7 +47,24 @@ export const StoreSection: React.FC<{category: string}> = ({ category }) => {
             />
           }) : <div className='spiner'></div>
       }
-      <div className='filters'></div>
+
+      <div className={`filters  ${state.toggle ? '' : 'off'}`}>
+        {
+          state.filters.map(subcategory => {
+            return <div className='filter' key={uuid()}
+              onClick={() => {
+                setState(state => ({
+                  ...state,
+                  currFilter: subcategory,
+                  goods: [...state.data].filter((good: any) => good.subCategory === subcategory)
+                }))
+                window.scrollTo(0, 0);
+              }}>{subcategory}</div>
+          })
+        }
+      </div>
+      <button className='filters__button' onClick={() => setState(state => ({...state, toggle: !state.toggle}))}></button>
+      
     </section>
   )
 }

@@ -1,10 +1,7 @@
 @import '../../scss/variables';
 
 .store__section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  @include flex(column, 0, center, 10px);
   width: 100%;
   min-height: calc(100vh - 160px);
   padding: 25px calc((100vw - 1200px) / 2);
@@ -19,25 +16,19 @@
   }
 }
 
-.filters {
-  @include flex-center;
-  width: 60px;
-  height: 60px;
+.filters__button {
+  @include flex(0, center, center, 0);
+  @include square(60px, 60px);
   background-color: $base-brand-color;
   border-radius: 50%;
   background-image: url(../../assets/svg/filters.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 55%;
+  background-size: 50%;
   position: sticky;
   bottom: 25px;
   transform: translateX(-575px);
   cursor: pointer;
-  transition-duration: 0.2s;
-
-  &:hover {
-    background-color: $dark-brand-color;
-  }
 
   @media (max-width: 1230px) {  
     transform: translateX(calc(-50vw + 60px));
@@ -45,9 +36,38 @@
 
   @media (hover:none), (max-width: 899.9px) {
     background-color: #ffb700;
-
-    &:hover {
-      background-color: #ffa200;
-    }
   }
+}
+
+.filters {
+  @include flex(column, center, center, 15px);
+  background-color: $base-brand-color;
+  padding: 50px 25px 65px;
+  border-radius: 10px;
+  position: sticky;
+  bottom: 90px;
+  transform: translateX(calc(-605px + 50%));
+  box-shadow: #bbbbbb 1px 1px 5px 0px;
+
+  @media (max-width: 1230px) {  
+    transform: translateX(calc(-50vw + 30px + 50%));
+  }
+
+  @media (hover:none), (max-width: 899.9px) {
+    background-color: #ffb700;
+  }
+}
+
+.filter {
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    color: #eeeeee;
+  }
+}
+
+.off {
+  display: none;
 }

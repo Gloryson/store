@@ -4,8 +4,25 @@ $dark-brand-color: #034369;
 
 
 
-@mixin flex-center {
+@mixin square ($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+
+
+@mixin flex ($fd, $jc, $ai, $g) {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  @if $fd != 0 {
+    flex-direction: $fd;
+  }
+  @if $jc != 0 {
+    justify-content: $jc;
+  }
+  @if $ai != 0 {
+    align-items: $ai;
+  }
+  @if $g != 0 {
+    gap: $g;
+  }
 }

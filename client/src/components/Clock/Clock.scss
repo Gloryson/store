@@ -1,18 +1,15 @@
-.clock__container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: default;
-}
-
-.clock__ico {
-  width: 20px;
-  height: 20px;
-  background: url(../../assets/svg/clock.svg) no-repeat center;
-  background-size: 100%;
-}
+@import '../../scss/variables';
 
 .clock__time {
-  min-width: 60px;
+  @include flex(0, 0, center, 10px);
+  min-width: 90px;
   font-size: 15px;
+  cursor: default;
+
+  &::before {
+    content: '';
+    @include square(20px, 20px);
+    background: url(../../assets/svg/clock.svg) no-repeat center;
+    background-size: 100%;
+  }
 }

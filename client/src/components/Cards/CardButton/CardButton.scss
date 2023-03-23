@@ -1,9 +1,8 @@
 @import '../../../scss/variables';
 
 .card__button {
-  @include flex-center;
-  width: 120px;
-  height: 35px;
+  @include flex(0, center, center, 0);
+  @include square(120px, 35px);
   border-radius: 5px;
   background-color: $base-brand-color;
   color: white;

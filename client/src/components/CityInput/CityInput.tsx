@@ -8,7 +8,6 @@ export const CityInput = () => {
 
   return(
     <div className='city__input__container'>
-      <div className='ico__location'></div>
       <select className='city__input'>
         {cities.map((city, index) => { return <option key={index + city}>{city}</option> })}
       </select>
