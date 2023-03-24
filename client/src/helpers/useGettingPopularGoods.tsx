@@ -5,7 +5,7 @@ import { setPopular } from "../store/popularSlice";
 
 
 
-export const useGetPopularGoods = () => {
+export const useGettingPopularGoods = () => {
 
   const dispatch = useAppDispatch();
   

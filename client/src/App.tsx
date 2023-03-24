@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import uuid from "react-uuid";
-import { useGetPopularGoods } from "./helpers";
+import { useGettingPopularGoods } from "./helpers";
 import { AppLayout, Authorization, Cart, Main, StoreSection } from "./pages";
 
 
@@ -8,7 +7,7 @@ import { AppLayout, Authorization, Cart, Main, StoreSection } from "./pages";
 
 export const App = () => {
   
-  useGetPopularGoods();
+  useGettingPopularGoods();
 
   return (
     <Routes>
@@ -16,24 +15,14 @@ export const App = () => {
         <Route index element={ <Main /> }/>
         <Route path='/authorization' element={ <Authorization />} />
         <Route path='/cart' element={ <Cart />} />
-        {
-          [
-            'fitness',
-            'electronics',
-            'cars',
-            'fishing',
-            'books',
-            'realty',
-            'services',
-            'food'
-          ].map(category => {
-            return <Route
-              path={`/${category}`}
-              element={ <StoreSection category={category} />}
-              key={uuid()}
-            />
-          })
-        }
+        <Route path={'/fitness'} element={ <StoreSection category={'fitness'} />} />
+        <Route path={'/electronics'} element={ <StoreSection category={'electronics'} />} />
+        <Route path={'/cars'} element={ <StoreSection category={'cars'} />} />
+        <Route path={'/fishing'} element={ <StoreSection category={'fishing'} />} />
+        <Route path={'/books'} element={ <StoreSection category={'books'} />} />
+        <Route path={'/realty'} element={ <StoreSection category={'realty'} />} />
+        <Route path={'/services'} element={ <StoreSection category={'services'} />} />
+        <Route path={'/food'} element={ <StoreSection category={'food'} />} />
       </Route>
     </Routes>
   )

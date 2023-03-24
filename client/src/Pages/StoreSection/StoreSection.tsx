@@ -8,16 +8,23 @@ import './StoreSection.scss';
 
 export const StoreSection: React.FC<{category: string}> = ({ category }) => {
 
-  const [state, setState] = useState({data: [], goods: [], filters: [''], currFilter: '', toggle: false});
+  const [state, setState] = useState({
+    data: [], 
+    goods: [], 
+    filters: [''], 
+    currFilter: '', 
+    isOpenFilters: false
+  });
 
+
+  
   useEffect(() => {
     setState(state => ({...state, data: []}));
     fetch(`http://${window.location.hostname}:3001/db/${category}`)
       .then(response => response.json())
       .then(data => {
         setState(state => ({...state, data: data, goods: data, filters: getSubcategories(data)}));
-      })
-      .catch((error) => console.log(error));
+      });
     window.scrollTo(0, 0);
   }, [category])
 
@@ -48,7 +55,7 @@ export const StoreSection: React.FC<{category: string}> = ({ category }) => {
           }) : <div className='spiner'></div>
       }
 
-      <div className={`filters  ${state.toggle ? '' : 'off'}`}>
+      <div className={`filters  ${state.isOpenFilters ? '' : 'off'}`}>
         {
           state.filters.map(subcategory => {
             return <div className='filter' key={uuid()}
@@ -63,7 +70,10 @@ export const StoreSection: React.FC<{category: string}> = ({ category }) => {
           })
         }
       </div>
-      <button className='filters__button' onClick={() => setState(state => ({...state, toggle: !state.toggle}))}></button>
+
+      <button className='filters__button' onClick={() => setState(state => (
+        {...state, isOpenFilters: !state.isOpenFilters}
+      ))}></button>
       
     </section>
   )

@@ -40,7 +40,7 @@
 }
 
 .filters {
-  @include flex(column, center, center, 15px);
+  @include flex(column, center, 0, 15px);
   background-color: $base-brand-color;
   padding: 50px 25px 65px;
   border-radius: 10px;
@@ -48,6 +48,7 @@
   bottom: 90px;
   transform: translateX(calc(-605px + 50%));
   box-shadow: #bbbbbb 1px 1px 5px 0px;
+  transition-duration: 0.2s;
 
   @media (max-width: 1230px) {  
     transform: translateX(calc(-50vw + 30px + 50%));
@@ -69,5 +70,10 @@
 }
 
 .off {
-  display: none;
+  transform: translateX(-50vw);
+  opacity: 0;
+  
+  @media (max-width: 1230px) {  
+    transform: translateX(-50vw);
+  }
 }

@@ -1,7 +1,7 @@
 import { getStringWithTime } from './getStringWithTime';
 import { getSubcategories } from './getSubcategories';
-import { useGetPopularGoods } from './useGetPopularGoods';
+import { useGettingPopularGoods } from './useGettingPopularGoods';
 
 
 
-export { getStringWithTime, useGetPopularGoods, getSubcategories };
+export { getStringWithTime, useGettingPopularGoods, getSubcategories };
