@@ -1,6 +1,6 @@
-import { useEffect } from "react";
-import { useAppDispatch } from "../store";
-import { setPopular } from "../store/popularSlice";
+import { useEffect } from 'react';
+import { useAppDispatch } from '../store';
+import { setPopular } from '../store/popularSlice';
 
 
 

@@ -1,6 +1,6 @@
-import { Route, Routes } from "react-router-dom";
-import { useGettingPopularGoods } from "./helpers";
-import { AppLayout, Authorization, Cart, Main, StoreSection } from "./pages";
+import { Route, Routes } from 'react-router-dom';
+import { useGettingPopularGoods } from './helpers';
+import { AppLayout, Authorization, Cart, Main, StoreSection } from './pages';
 
 
 

@@ -1,8 +1,8 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { configureStore } from '@reduxjs/toolkit';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import burgerReducer from './burgerSlice';
-import cartSlice from "./cartSlice";
-import popularSlice from "./popularSlice";
+import cartSlice from './cartSlice';
+import popularSlice from './popularSlice';
 
 
 
