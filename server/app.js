@@ -34,6 +34,10 @@ const connect = async () => {
         res.send(goods.filter(good => req.params.cat === good.category));
       }, 500)
     });
+
+    app.get('/search/:str', (req, res) => {
+      res.send(goods.filter(good => good.name.toLowerCase().includes(req.params.str.toLowerCase())).slice(0, 10));
+    })
 		
 	} catch (error) {
 		console.log(error);

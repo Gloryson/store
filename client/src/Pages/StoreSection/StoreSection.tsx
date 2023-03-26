@@ -24,7 +24,8 @@ export const StoreSection: React.FC<{category: string}> = ({ category }) => {
       .then(response => response.json())
       .then(data => {
         setState(state => ({...state, data: data, goods: data, filters: getSubcategories(data)}));
-      });
+      })
+      .catch((error) => console.log(error));
     window.scrollTo(0, 0);
   }, [category])
 
