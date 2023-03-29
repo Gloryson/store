@@ -1,2 +1,2 @@
 ## Store
-Store made on React | Express | MongoDB
+Store made on React | TypeScript | Express | MongoDB
